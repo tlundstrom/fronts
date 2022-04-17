@@ -31,6 +31,35 @@ class SLL {
 	front() {
 		return this.head.data;
 	}
+
+	findSum() {
+		let runner = this.head;
+		let sum = 0;
+
+		while (runner !== null) {
+			sum += runner.data;
+			runner = runner.next;
+		}
+		return sum;
+	}
+
+	display() {
+		let list = "{head: { data: ";
+		let runner = this.head;
+
+		while (runner !== null) {
+			list += runner.data + ", next: { data: ";
+			runner = runner.next;
+		}
+		runner = this.head;
+		list += "null";
+		while (runner !== null) {
+			list += "}";
+			runner = runner.next;
+		}
+		list += "}};";
+		return console.log(list);
+	}
 }
 
 let node1 = new Node(10);
@@ -44,16 +73,17 @@ node3.next = node4;
 
 let list = new SLL(node1);
 
-console.log(list.front());
-
-console.log(list.removeFront());
-console.log(list.removeFront());
-console.log(list.front());
-list.addFront(20);
-console.log(list.front());
-list.addFront(10);
-console.log(list.front());
-console.log(list.removeFront());
-console.log(list.removeFront());
-console.log(list.removeFront());
-console.log(list.removeFront());
+// console.log(list.front());
+// console.log(list.removeFront());
+// console.log(list.removeFront());
+// console.log(list.front());
+// list.addFront(20);
+// console.log(list.front());
+// list.addFront(10);
+// console.log(list.front());
+// console.log(list.removeFront());
+// console.log(list.removeFront());
+// console.log(list.removeFront());
+// console.log(list.removeFront());
+// console.log(list.findSum());
+list.display();
